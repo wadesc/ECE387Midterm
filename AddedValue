@@ -1,0 +1,25 @@
+//setup loop is modified to make pin 8 an output pin
+void setup()
+{
+  pinMode(8, OUTPUT);
+  // setup PC serial port
+  pcSerial.begin(9600);
+}
+
+//action loop is edited to set the desired output high when command is spoken
+void action()
+{
+    switch (group)
+    {
+    case GROUP_1:
+      switch (idx)
+      {
+      case G1_REDLED:
+        digitalWrite(8, HIGH);
+        // write your action code here
+        // group = GROUP_X; <-- or jump to another group X for composite commands
+        break;
+      }
+      break;
+    }
+}
