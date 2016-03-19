@@ -14,10 +14,23 @@ void action()
     case GROUP_1:
       switch (idx)
       {
-      case G1_REDLED:
+      case G1_LIGHTS_ON:
         digitalWrite(8, HIGH);
         // write your action code here
         // group = GROUP_X; <-- or jump to another group X for composite commands
+        break;
+      case G1_LIGHTS_OFF:
+        digitalWrite(8, LOW);
+        // write your action code here
+        // group = GROUP_X; <-- or jump to another group X for composite commands
+        break;
+      case G1_BLINK:
+        while (G1_BLINK) {
+          digitalWrite(8, HIGH);   // turn the LED on (HIGH is the voltage level)
+          delay(1000);              // wait for a second
+          digitalWrite(8, LOW);    // turn the LED off by making the voltage LOW
+          delay(1000);              // wait for a second
+        }
         break;
       }
       break;
